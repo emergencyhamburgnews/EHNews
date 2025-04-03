@@ -1,0 +1,269 @@
+
+.eh-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.eh-info {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1DA1F2;
+    margin-top: 20px;
+}
+
+.eh-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.eh-info li {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    color: #FF9100;
+}
+
+.eh-info li:last-child {
+    border-bottom: none;
+}
+
+.eh-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.eh-image {
+    max-width: 300px;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #1DA1F2;
+}
+
+.eh-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.eh-button {
+    padding: 12px 24px;
+    background: #1DA1F2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.eh-button:hover {
+    background: #1a91da;
+    text-decoration: none;
+}
+
+.map-title {
+    text-align: center;
+    color: #1DA1F2;
+    margin: 30px 0 20px 0;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.map-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #1DA1F2;
+}
+
+.nav-menu select {
+    padding: 8px;
+    background: #2a2a2a;
+    color: #1DA1F2;
+    border: 1px solid #1DA1F2;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.nav-menu select:hover {
+    background: #222;
+}
+
+.post-section {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.create-post-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #1DA1F2;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.create-post-button:hover {
+    background: #1a91da;
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+.post-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #2a2a2a;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid #1DA1F2;
+}
+
+.close-button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.post-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.option-button {
+    padding: 15px 30px;
+    border: 1px solid #1DA1F2;
+    background: #222;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.option-button:hover {
+    background: #333;
+}
+
+.option-button i {
+    font-size: 24px;
+}
+
+.post-form {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #1DA1F2;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.post-form textarea {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+.post-form input[type="file"] {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+.post-button {
+    padding: 10px 20px;
+    background: #1DA1F2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.posts-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.post {
+    background: #2a2a2a;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid #1DA1F2;
+}
+
+.post-media {
+    max-width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.post-actions {
+    margin: 10px 0;
+}
+
+.like-button {
+    padding: 5px 15px;
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.like-button:hover {
+    background: #444;
+}
+
+.post-date {
+    color: #888;
+    font-size: 14px;
+    margin-top: 10px;
+}

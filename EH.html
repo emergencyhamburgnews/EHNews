@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/jpeg" href="EHNfav.jpg">
+    <title>Emergency Hamburg</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="EH.css">
+</head>
+<body>
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+    <header>
+        <div class="header-content">
+            <div class="header-left">
+                <img src="EH logo.png" alt="Emergency Hamburg Logo" class="logo">
+                <h1>Emergency Hamburg</h1>
+            </div>
+            <nav class="nav-menu">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+                    <div id="search-results"></div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">About EHN ▼</button>
+                    <div class="dropdown-content">
+                        <p class="dropdown-text">Bringing you the latest updates, leaks, and community highlights!</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Pages ▼</button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="eh-content">
+            <h2>Emergency Hamburg</h2>
+            <div class="eh-info">
+                <p>Welcome to Emergency Hamburg! Here you'll find:</p>
+                <ul>
+                    <li>Latest Emergency Updates</li>
+                    <li>Important Announcements</li>
+                    <li>Community Guidelines</li>
+                    <li>Emergency Contact Information</li>
+                    <h2 id="about-eh">About EH</h2>
+                    <p>Emergency Hamburg is an emergency services role-playing game on the Roblox platform, where you can be a police officer, citizen, bus driver, car mechanic, truck driver, firefighter, medic, or criminal in the German city of Hamburg.</p>
+                </ul>
+                <div class="eh-images">
+                    <img src="About EH.jpg" alt="About EH" class="eh-image">
+                    <img src="EH Report player.jpg" alt="EH Report Player" class="eh-image">
+                    <img src="unban-card.jpg" alt="Unban Card" class="eh-image">
+                </div>
+                
+                <h2 id="map-title" class="map-title">Emergency Hamburg Map</h2>
+                <div class="map-container">
+                    <img src="EH map.jpg" alt="Emergency Hamburg Map" class="map-image">
+                </div>
+                <div class="eh-buttons">
+                    <a id="play-button" href="https://www.roblox.com/games/7711635737/Emergency-Hamburg?referralUrl=https%3A%2F%2Fwww.roblox.com%2Fshare-links%3Ftype%3DExperienceAffiliate%26code%3D4e2ad01d4161cf4e81590f8047941018" class="eh-button">Play on Roblox</a>
+                    <a href="https://wiki.emergency-hamburg.com/en/home" class="eh-button">Wiki</a>
+                    <a href="https://emergency-hamburg.com/player-report" class="eh-button">Report Player</a>
+                    <a href="https://emergency-hamburg.com/unban-request" class="eh-button">Request Unban</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post Creation Section (Only visible to admin) -->
+        <section class="post-section">
+            <button class="create-post-button" id="createPostBtn">+</button>
+
+            <div class="post-modal" id="postModal">
+                <div class="modal-content">
+                    <span class="close-button" id="closeModal">&times;</span>
+                    <div class="post-options">
+                        <button class="option-button" id="mediaPostBtn">
+                            <i class="fas fa-camera"></i>
+                            Photo/Video
+                        </button>
+                        <button class="option-button" id="textPostBtn">
+                            <i class="fas fa-pen"></i>
+                            Text Post
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <form id="mediaPostForm" class="post-form hidden" action="/eh/create_eh_post" method="POST" enctype="multipart/form-data">
+                <input type="file" name="media" accept="image/*,video/*" class="hidden" id="mediaInput">
+                <textarea name="content" placeholder="Add a caption..."></textarea>
+                <button type="submit" class="post-button">Post</button>
+            </form>
+
+            <form id="textPostForm" class="post-form hidden" action="/eh/create_eh_post" method="POST">
+                <textarea name="content" placeholder="Write your message here..."></textarea>
+                <button type="submit" class="post-button">Post</button>
+            </form>
+        </section>
+
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script>
+            const createPostBtn = document.getElementById('createPostBtn');
+            const postModal = document.getElementById('postModal');
+            const closeModal = document.getElementById('closeModal');
+            const mediaPostBtn = document.getElementById('mediaPostBtn');
+            const textPostBtn = document.getElementById('textPostBtn');
+            const mediaPostForm = document.getElementById('mediaPostForm');
+            const textPostForm = document.getElementById('textPostForm');
+            const mediaInput = document.getElementById('mediaInput');
+
+            // Show/hide elements based on admin status
+            window.onload = function() {
+                const username = '{{ user_name }}';
+                if (username !== 'NewsHambu86122') {
+                    document.getElementById('createPostBtn').style.display = 'none';
+                }
+            }
+
+            createPostBtn.onclick = function() {
+                postModal.style.display = 'block';
+            }
+
+            closeModal.onclick = function() {
+                postModal.style.display = 'none';
+            }
+
+            mediaPostBtn.onclick = function() {
+                mediaInput.click();
+            }
+
+            mediaInput.onchange = function() {
+                postModal.style.display = 'none';
+                mediaPostForm.classList.remove('hidden');
+                textPostForm.classList.add('hidden');
+            }
+
+            textPostBtn.onclick = function() {
+                postModal.style.display = 'none';
+                textPostForm.classList.remove('hidden');
+                mediaPostForm.classList.add('hidden');
+            }
+
+            window.onclick = function(event) {
+                if (event.target == postModal) {
+                    postModal.style.display = 'none';
+                }
+            }
+        </script>
+
+        <!-- Posts Display Section -->
+        <section class="posts-container">
+            <!-- Posts will be displayed here -->
+        </section>
+    </main>
+
+    <script>
+    // Hide post form if user is not admin
+    window.onload = function() {
+        const username = '{{ user_name }}';
+        if (username !== 'NewsHambu86122') {
+            document.getElementById('postForm').style.display = 'none';
+        }
+    }
+
+    async function handleLike(postId) {
+        const response = await fetch('/like_eh_post', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ post_id: postId })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            document.getElementById(`likes-${postId}`).textContent = data.likes;
+        }
+    }
+    </script>
+    <footer>
+        <p>Made on April 2, 2025</p>
+    </footer>
+    <script>
+    window.addEventListener('load', function() {
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }, 1500);
+    });
+    </script>
+</body>
+</html>
