@@ -14,6 +14,7 @@
         <div class="header-content">
             <div class="header-left">
                 <img src="EH logo.png" alt="Emergency Hamburg Logo" class="logo">
+				<section id="Emergency Hamburg">
                 <h1>Emergency Hamburg</h1>
             </div>
             <nav class="nav-menu">
@@ -46,6 +47,7 @@
                     <li>Important Announcements</li>
                     <li>Community Guidelines</li>
                     <li>Emergency Contact Information</li>
+					<section id="About EH">
                     <h2 id="about-eh">About EH</h2>
                     <p>Emergency Hamburg is an emergency services role-playing game on the Roblox platform, where you can be a police officer, citizen, bus driver, car mechanic, truck driver, firefighter, medic, or criminal in the German city of Hamburg.</p>
                 </ul>
@@ -54,12 +56,13 @@
                     <img src="EH Report player.jpg" alt="EH Report Player" class="eh-image">
                     <img src="unban-card.jpg" alt="Unban Card" class="eh-image">
                 </div>
-                
+                <section id="Emergency Hamburg Map">
                 <h2 id="map-title" class="map-title">Emergency Hamburg Map</h2>
                 <div class="map-container">
                     <img src="EH map.jpg" alt="Emergency Hamburg Map" class="map-image">
                 </div>
                 <div class="eh-buttons">
+				<section id="About EH">
                     <a id="play-button" href="https://www.roblox.com/games/7711635737/Emergency-Hamburg?referralUrl=https%3A%2F%2Fwww.roblox.com%2Fshare-links%3Ftype%3DExperienceAffiliate%26code%3D4e2ad01d4161cf4e81590f8047941018" class="eh-button">Play on Roblox</a>
                     <a href="https://wiki.emergency-hamburg.com/en/home" class="eh-button">Wiki</a>
                     <a href="https://emergency-hamburg.com/player-report" class="eh-button">Report Player</a>
@@ -194,5 +197,25 @@
         }, 1500);
     });
     </script>
+	<script src="script.js" defer></script>
+	<script>
+    // Handle form submissions locally for testing
+    document.getElementById('mediaPostForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent actual form submission
+        const formData = new FormData(this);
+        const content = formData.get('content');
+        const media = formData.get('media');
+        console.log('Media Post:', { content, media: media.name });
+        this.classList.add('hidden'); // Hide the form after "posting"
+    });
+
+    document.getElementById('textPostForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent actual form submission
+        const formData = new FormData(this);
+        const content = formData.get('content');
+        console.log('Text Post:', { content });
+        this.classList.add('hidden'); // Hide the form after "posting"
+    });
+</script>
 </body>
 </html>

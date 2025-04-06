@@ -4,16 +4,17 @@ const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
 
 const searchableContent = {
-    'about eh': '#about-eh',
-    'emergency hamburg': '#about-eh',
+    'about eh': '#About EH',
+	'post' : '#Post',
+	'follow me' : '#Follow me',
+    'emergency hamburg': '#About EH',
     'wiki': 'https://wiki.emergency-hamburg.com/en/home',
     'report player': 'https://emergency-hamburg.com/player-report',
     'unban': 'https://emergency-hamburg.com/unban-request',
-    'map': '#map-title',
-    'eh map': '#map-title',
-    'hamburg map': '#map-title',
-    'play': '#play-button',
-    'play game': '#play-button'
+    'map': '#Emergency Hamburg Map',
+    'eh map': '#Emergency Hamburg Map',
+    'hamburg map': '#Emergency Hamburg Map',
+	'contact': '#Contact',
 };
 
 searchInput.addEventListener('input', function() {
@@ -35,13 +36,15 @@ searchInput.addEventListener('input', function() {
         ).join('');
         results.style.display = 'block';
     } else {
-        results.style.display = 'none';
+        results.innerHTML = `<div class="search-result-item">Hmmmm.... looks like there weren't any results for "${query}"</div>`;
+        results.style.display = 'block';
     }
 });
 
 function handleSearchResult(target) {
     if (target.startsWith('#')) {
-        const element = document.querySelector(target);
+        const cleanTarget = target.replace('#', '');
+        const element = document.getElementById(cleanTarget) || document.querySelector(`[id="${cleanTarget}"]`);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -51,6 +54,22 @@ function handleSearchResult(target) {
     document.getElementById('search-results').style.display = 'none';
     searchInput.value = '';
 }
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.search-container')) {
+        document.getElementById('search-results').style.display = 'none';
+    }
+});
+
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }, 1500);
+});
 
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.search-container')) {
