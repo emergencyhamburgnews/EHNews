@@ -153,16 +153,16 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background: #2a2a2a;
+    background: #3B3B3B;
     width: 200px;
     box-shadow: 0 4px 8px rgba(29, 161, 242, 0.2);
-    border-radius: 8px;
+    border-radius: 5px;
     z-index: 1;
 }
 
 .dropdown-content a {
     color: #1DA1F2;
-    padding: 12px 16px;
+    padding: 12px 5px;
     text-decoration: none;
     display: block;
     transition: all 0.3s ease;
@@ -175,7 +175,7 @@ header {
 
 .dropdown:hover .dropdown-content {
     display: block;
-	outline: 3px solid rgba(29, 161, 242, 0.5);
+	outline: 3px solid rgba(29, 161, 242, 5);
 }
 
 .dropdown:hover .dropbtn {
@@ -370,4 +370,44 @@ footer {
 .search-result-item:hover {
     background: #222;
 }
+
+.row {
+  margin: 7px -16px;
+  outline: 3px solid rgba(29, 161, 242, 5);
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 48%;
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.dashed-line {
+  border: none;
+  margin: 20px 0;
+  width: 80%;
+  height: 1px; /* Adds visible height */
+}
+
+
+
 

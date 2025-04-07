@@ -15,6 +15,8 @@ const searchableContent = {
     'eh map': '#Emergency Hamburg Map',
     'hamburg map': '#Emergency Hamburg Map',
 	'contact': '#Contact',
+	'object interaction': '#Object Interaction',
+	'improved fence': '#Improved Fence',
 };
 
 searchInput.addEventListener('input', function() {
