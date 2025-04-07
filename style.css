@@ -38,6 +38,7 @@ body {
     background-color: #1a1a1a;
     color: #ffffff;
     text-align: center;
+	width: 1310px;
 }
 
 .auth-container {
@@ -101,6 +102,7 @@ header {
     background-color: #000000;
     padding: 20px;
     border-bottom: 2px solid #1DA1F2;
+	width: 1310px;
 }
 
 .header-content {
