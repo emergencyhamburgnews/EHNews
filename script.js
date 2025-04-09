@@ -88,3 +88,5 @@ window.addEventListener('load', function() {
         }, 500);
     }, 1500);
 });
+
+

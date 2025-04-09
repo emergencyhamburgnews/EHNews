@@ -25,7 +25,7 @@ def home():
 
 @app.route('/post', methods=['POST'])
 def create_post():
-    if request.headers.get('NewsHambu86122') != 'NewsHambu86122':  # Replace with your username
+    if request.headers.get('X-Replit-User-Name') != 'NewsHambu86122':  # Replace with your username
         return 'Unauthorized', 401
     
     content = request.form.get('content')
